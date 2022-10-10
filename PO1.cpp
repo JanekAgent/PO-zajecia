@@ -109,12 +109,12 @@ int main()
     burkowa.plec = 0;
     burkowa.wiek = 3;
     burkowa.agresywnosc = 0;
-    burek.rozmnazaj(burkowa);
-    wlasciciel.zabij(burkowa);
+    burkowa=burek.rozmnazaj(burkowa);
+    burkowa=wlasciciel.zabij(burkowa);
     printf_s("%d\n", burkowa.zyje);
     printf_s("%d\n", burek.ilosc_dzieci);
     printf_s("%d\n", burkowa.ilosc_dzieci);
-    burek.rozmnazaj(burkowa);
+    burkowa=burek.rozmnazaj(burkowa);
     printf_s("%d\n", burek.ilosc_dzieci);
     printf_s("%d\n", burkowa.ilosc_dzieci);
 
