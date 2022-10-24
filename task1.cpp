@@ -111,12 +111,12 @@ int main()
     burkowa.agresywnosc = 0;
     burkowa=burek.rozmnazaj(burkowa);
     burkowa=wlasciciel.zabij(burkowa);
-    printf_s("%d\n", burkowa.zyje);
-    printf_s("%d\n", burek.ilosc_dzieci);
-    printf_s("%d\n", burkowa.ilosc_dzieci);
+    printf("%d\n", burkowa.zyje);
+    printf("%d\n", burek.ilosc_dzieci);
+    printf("%d\n", burkowa.ilosc_dzieci);
     burkowa=burek.rozmnazaj(burkowa);
-    printf_s("%d\n", burek.ilosc_dzieci);
-    printf_s("%d\n", burkowa.ilosc_dzieci);
+    printf("%d\n", burek.ilosc_dzieci);
+    printf("%d\n", burkowa.ilosc_dzieci);
 
 
     //std::cout << "Hello World!\n";
