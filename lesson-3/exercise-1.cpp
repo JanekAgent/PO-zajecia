@@ -115,7 +115,7 @@ int main()
     rev=movie.make_avg_reviev();
     cout<<rev<<endl;
     int change;
-    change=movie.channge_director(director1);
+    change=movie.channge_director(director2);
     rev=movie.make_avg_reviev();
     cout<<rev<<endl;
 
