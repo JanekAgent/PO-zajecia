@@ -41,11 +41,12 @@ class Actor{
         grade=g;
     }
 };
+Actor defaultActor("",0);
 class MainCharacter{
     public:
     string name;
     Actor actor;
-    MainCharacter(string n="  ",Actor a){
+    MainCharacter(string n="  ",Actor a=defaultActor){
         name=n;
         actor=a;
     }
