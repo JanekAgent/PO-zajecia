@@ -1,6 +1,7 @@
 
 #include <iostream>
 using namespace std;
+string defaultName="";
 class Camera{
     public:
     string name;
@@ -44,7 +45,7 @@ class MainCharacter{
     public:
     string name;
     Actor actor;
-    MainCharacter(string n="    ",Actor a){
+    MainCharacter(string n="  ",Actor a){
         name=n;
         actor=a;
     }
