@@ -18,13 +18,13 @@ class Laptop: public Computer{
     Laptop(int bl){
         batteryLevel=bl;
     }
-    Laptop loadBaterry(int bat){
+    Laptop loadBattery(int bat){
         return Laptop(batteryLevel=bat);
     }
 };
 int main(){
     Laptop depletedLaptop(0);
-    Laptop halfBatteryLaptop = depletedLaptop.loadBaterry(50);
+    Laptop halfBatteryLaptop = depletedLaptop.loadBattery(50);
     int bat=halfBatteryLaptop.checkBattery();
     printf("%d\n",bat);
 }
