@@ -7,18 +7,23 @@ class Computer{
 
 };
 
-class Laptop: public Computer{
+class Laptop{
     private:
     int batteryLevel;
     public:
     Laptop(int bl){
         batteryLevel=bl;
     }
+    Laptop loadBaterry(int bat){
+        return Laptop(batteryLevel=bat);
+    }
     int checkBaterry(){
         return batteryLevel;
     }
+
     
-    Laptop loadBaterry(){
-        return Laptop(batteryLevel=100)
-    }
 };
+int main(){
+    Laptop depletedLaptop(0);
+    Laptop halfBatteryLaptop = depletedLaptop.loadBaterry(50);
+}
