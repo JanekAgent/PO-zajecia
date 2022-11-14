@@ -26,4 +26,6 @@ class Laptop{
 int main(){
     Laptop depletedLaptop(0);
     Laptop halfBatteryLaptop = depletedLaptop.loadBaterry(50);
+    int bat=halfBatteryLaptop.checkBaterry();
+    printf("%d\n",bat);
 }
