@@ -29,15 +29,14 @@ class Logarithm : public Number {
 };
 int main(){
     //Logarithm lg(10,1000);
-    int correct=1;
-    
+
     try{    
     Logarithm lg(0,10000);
     cout<<lg.doubleValue()<<"\n";}
 
     catch (int errorNumber){
         cout<<"Error number: "<<errorNumber<<"\n";
-        correct=0;
+        
         if (errorNumber==1){
             cout<<"Wrong value of base\n";
 
@@ -47,6 +46,6 @@ int main(){
 
         }
     }
-    if (correct==1){}
+    
     
 }
