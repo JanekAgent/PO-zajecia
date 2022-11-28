@@ -4,7 +4,7 @@ using namespace std;
 #include <sstream>
 #include <iomanip>
 #include <cmath>
-class TwoNumberCalculator {
+class TwoNumbers {
     private:
     int a;
     int b;
@@ -12,13 +12,14 @@ class TwoNumberCalculator {
     int max() { return a > b ? a : b;}
     int min() { return a < b ? a : b;}
     float avg() { return (a + b) / 2;}
-    TwoNumberCalculator(int a1=0,int b1=0){
+    TwoNumbers(int a1=0,int b1=0){
         a=a1;
         b=b1;
     }
 };
 int main(){
-    TwoNumberCalculator calc(10,10);
-    cout<<calc.avg();
-
+    TwoNumbers calc(10,50);
+    cout<<calc.avg()<<"\n";
+    cout<<calc.max()<<"\n";
+    cout<<calc.min()<<"\n";
 }
