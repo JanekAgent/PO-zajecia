@@ -18,7 +18,7 @@ class Logarithm : public Number {
     
     if (inputBase<=0){throw(1);}
     if (inputBase==1){throw(1);}
-    if (inputArgument<0){throw(2);}
+    if (inputArgument<=0){throw(2);}
     
     
     //cout<<"elding\n";
