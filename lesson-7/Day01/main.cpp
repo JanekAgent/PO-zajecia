@@ -5,18 +5,79 @@ using namespace std;
 #include <sstream>
 #include <iomanip>
 #include <cmath>
+#include <list>
+#include <string>
+class backpack{
+    private:
+    int value;
+
+    public: 
+    backpack(int initValue=0){value=initValue;}
+    void addObject(int valueOfObject){
+    //int newvalue;
+    value=value+valueOfObject;
+    }
+    int valueOfBackpack(){return value;}
+    void resetValue(){value=0;}
+};
+class maximumValue{
+    private:
+    int value;
+    public:
+    maximumValue(int initValue=0){value=initValue;}
+    void check(int newValue){
+        if (newValue>value){
+            value=newValue;
+        }
+    }
+    int sollution(){return value;}
+};
 class fileObject{
+    private:
+    
     public:
     fileObject(string nam=""){
         string line;
-        ifstream MyReadFile("Day01_test.txt");
+        ifstream MyReadFile("Day01.txt");
+        //list<backpack>
+        backpack bp(0);
+        maximumValue mv(0);
+        int lineInt=0;
+        int i=0;
+        list<backpack> allBackpacks;
+        //allBackpacks.push_back(p);
+        //backpack allBackpacks [i]();
+        
         while (getline (MyReadFile, line)) {
+        
         if (line==""){
-            cout<< "koniec plecaka"<<"\n";}
+            i++;
+            mv.check(bp.valueOfBackpack());
+            //cout<<mv.sollution()<<"\n";
+            //delete bp;
+            //backpack bp(0);
+            bp.resetValue();
+            continue;
+
+            }
         if (line=="\0"){
-            cout<<"konic";
+            //cout<<"";
+            mv.check(bp.valueOfBackpack());
+            //cout<<mv.sollution()<<"\n";
+            break;
         }
+        
+        lineInt = stoi( line);
+        bp.addObject(lineInt);
+        //cout<<bp.valueOfBackpack()<<"\n";
+        //cout<<i<<"\n";
+
         }MyReadFile.close();
+        cout<<mv.sollution()<<"\n";
+
+    }
+    int biggestBackpackOfFile(){
+        //return mv.sollution();
     }
 };
 
@@ -24,6 +85,7 @@ int main(){
     ifstream MyReadFile("Day01_test.txt");
     string fileText;
     fileObject("Day01_test.txt");
+
   // Output the text from the file
     
 
