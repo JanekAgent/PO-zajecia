@@ -7,28 +7,26 @@ using namespace std;
 #include <cmath>
 #include <list>
 #include <string>
-class backpack{
+class round{
     private:
-    int value;
+    int score;
 
     public: 
-    backpack(int initValue=0){value=initValue;}
-    void addObject(int valueOfObject){
-    //int newvalue;
-    value=value+valueOfObject;
+    round(char ep, char yp){
+        score+=yp-58;
+        
     }
-    int valueOfBackpack(){return value;}
-    void resetValue(){value=0;}
+    
+    int scoreOfRound(){return score;}
+    void resetRound(){score=0;}
 };
-class maximumValue{
+class totalScore{
     private:
     int value;
     public:
-    maximumValue(int initValue=0){value=initValue;}
-    void check(int newValue){
-        if (newValue>value){
-            value=newValue;
-        }
+    totalScore(int initValue=0){value=initValue;}
+    void addRoundScore(int round){
+        value+=round;
     }
     int sollution(){return value;}
 };
@@ -36,15 +34,15 @@ class fileObject{
     private:
     
     public:
-    fileObject(string name=""){
+    fileObject(string nam=""){
         string line;
-        ifstream MyReadFile(name);
+        ifstream MyReadFile("Day01.txt");
         //list<backpack>
-        backpack bp(0);
-        maximumValue mv(0);
+        
+        totalScore mv(0);
         int lineInt=0;
         int i=0;
-        list<backpack> allBackpacks;
+        //list<backpack> allBackpacks;
         //allBackpacks.push_back(p);
         //backpack allBackpacks [i]();
         
@@ -52,7 +50,7 @@ class fileObject{
         
         if (line==""){
             i++;
-            mv.check(bp.valueOfBackpack());
+            mv.addRoundScore(bp.scoreOfRound());
             //cout<<mv.sollution()<<"\n";
             //delete bp;
             //backpack bp(0);
@@ -62,7 +60,7 @@ class fileObject{
             }
         if (line=="\0"){
             //cout<<"";
-            mv.check(bp.valueOfBackpack());
+            mv.addRoundScore(bp.scoreOfRound());
             //cout<<mv.sollution()<<"\n";
             break;
         }
@@ -76,15 +74,13 @@ class fileObject{
         cout<<mv.sollution()<<"\n";
 
     }
-    int biggestBackpackOfFile(){
-        //return mv.sollution();
-    }
+    
 };
 
 int main(){
-    
+    ifstream MyReadFile("Day02_test.txt");
     string fileText;
-    fileObject("Day01_test.txt");
+    fileObject("Day02_test.txt");
 
   // Output the text from the file
     
