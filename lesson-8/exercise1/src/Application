@@ -1,7 +1,0 @@
-public class Application{
-
-    public static void mian(String[] args){
-        Exchange= new Exchange.Fake();
-        Cash euro = dollar 
-    }
-}
