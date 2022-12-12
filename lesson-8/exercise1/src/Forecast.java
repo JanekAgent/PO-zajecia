@@ -3,7 +3,8 @@ public interface Forecast {
     final class Fake implements Forecast {
         @Override
         public float fahrenheit(float temperature){
-            return 80f;
+            
+            return 32f+1.8f*temperature;
         }
     }
     
