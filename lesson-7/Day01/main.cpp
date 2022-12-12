@@ -84,7 +84,7 @@ class fileObject{
 int main(){
     
     string fileText;
-    fileObject("Day01_test.txt");
+    fileObject("input.txt");
 
   // Output the text from the file
     
