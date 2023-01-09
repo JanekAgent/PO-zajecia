@@ -10,17 +10,21 @@ public class Shiritori {
     // public ArrayList<String> words;
     public Shiritori(){
         game_over=false;
-        
+        words = new ArrayList<String>();
     }
     public ArrayList<String> play(String word){
-        if (word.contains(word)){
+        if (words.isEmpty()){
+            words.add(word);
+            return printWords();
+        }
+        if (words.contains(word)){
             game_over=true;
             System.out.print(word);
             System.out.print(" has already been used");
             return printWords();
 
         }
-        if (words.get(words.size()).charAt(words.get(words.size()).length())==word.charAt(0)){
+        if (words.get(words.size()-1).charAt(words.get(words.size()-1).length()-1)==word.charAt(0)){
             game_over=true;
             System.out.print(word);
             System.out.print(" don't start with");
